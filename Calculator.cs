@@ -16,78 +16,158 @@ namespace cv09
             Result
         };
 
-        private enum Operation
-        {
-            Addition,
-            Subtraction,
-            Mulitplication,
-            Division
-        };
-
         private State _state;
-        private Operation _operation;
+        private string firstNumber;
+        private string secondNumber;
+        private string operation;
 
-        public string Display { get; set; }
-
-        public void Buttons(string btn)
+        public string Display
         {
-            var number = "";
-
-            switch (btn)
+            get 
             {
-                // numbers
-                case "0":
-                    number += "0";
-                    break;
-                case "1":
-                    number += "1";
-                    break;
-                case "2":
-                    number += "2";
-                    break;
-                case "3":
-                    number += "3";
-                    break;
-                case "4":
-                    number += "4";
-                    break;
-                case "5":
-                    number += "5";
-                    break;
-                case "6":
-                    number += "6";
-                    break;
-                case "7":
-                    number += "7";
-                    break;
-                case "8":
-                    number += "8";
-                    break;
-                case "9":
-                    number += "9";
-                    break;
-                
-                // operations
-                case "+":
-                    _state = State.Operation;
-                    _operation = Operation.Addition; 
-                    break;
-                case "-":
-                    _state = State.Operation;
-                    _operation = Operation.Subtraction;
-                    break;
-                case "*":
-                    _state = State.Operation;
-                    _operation = Operation.Mulitplication;
-                    break;
-                case "/":
-                    _state = State.Operation;
-                    _operation = Operation.Division;
-                    break;
-                case "=":
-                    _state = State.Result;
-                    break;
+                switch (_state)
+                {
+                    case State.First:
+                    case State.Operation:
+                        return firstNumber;
+                    case State.Second:
+                        return secondNumber;
+                    case State.Result:
+                        if (secondNumber == "0")
+                            return "Division by zero.";
+                        else
+                            return Calculate().ToString("#.##");
+                    default:
+                        return "";
+                }
             }
+        }
+
+        public string Memory { get; set; }
+
+        public void Buttons(string button)
+        {
+            // numbers
+            if (button.Length == 1 && char.IsDigit(char.Parse(button)) || button == ",")
+            {
+                switch (_state)
+                {
+                    case State.First:
+                        firstNumber += button;
+                        break;
+                    case State.Operation:
+                        _state = State.Second;
+                        secondNumber = button;
+                        break;
+                    case State.Second:
+                        secondNumber += button;
+                        break;
+                    case State.Result:
+                        _state = State.First;
+                        firstNumber = button;
+                        secondNumber = "";
+                        break;
+                }
+            }
+
+            // operations
+            else if (button == "+" || button == "-" || button == "*" || button == "/")
+            {
+                operation = button;
+                _state = State.Operation;
+            }
+
+            // polarity
+            else if (button == "+/-")
+            {
+                switch (_state)
+                {
+                    case State.First:
+                        firstNumber = Polarity(firstNumber);
+                        break;
+                    case State.Second:
+                        secondNumber = Polarity(secondNumber);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            // result
+            else if (button == "=")
+            {
+                _state = State.Result;
+            }
+
+            // remove last digit
+            else if (button == "<=")
+            {
+                switch (_state)
+                {
+                    case State.First:
+                        firstNumber = firstNumber.Remove(firstNumber.Length - 1);
+                        break;
+                    case State.Second:
+                        secondNumber = secondNumber.Remove(secondNumber.Length - 1);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            // removes all numbers
+            else if (button == "C")
+            {
+                RemoveNumbers();
+            }
+
+            // remove current number
+            else if (button == "CE")
+            {
+                switch (_state)
+                {
+                    case State.First:
+                        firstNumber = "";
+                        break;
+                    case State.Second:
+                        secondNumber = "";
+                        break;
+                    case State.Result:
+                        RemoveNumbers();
+                        break;
+                }
+            }
+        }
+
+        public void RemoveNumbers()
+        {
+            _state = State.First;
+            firstNumber = "";
+            secondNumber = "";
+        }
+        public string Polarity(string number)
+        {
+            if (number[0] == '-')
+            {
+                return number.Remove(0);
+            }
+            else
+                return "-" + number;
+        }
+        public double Calculate()
+        {
+            switch (operation)
+            {
+                case "+":
+                    return Double.Parse(firstNumber) + Double.Parse(secondNumber);
+                case "-":
+                    return Double.Parse(firstNumber) - Double.Parse(secondNumber);
+                case "*":
+                    return Double.Parse(firstNumber) * Double.Parse(secondNumber);
+                case "/":
+                    return Double.Parse(firstNumber) / Double.Parse(secondNumber);
+            }
+            return 0;
         }
     }
 }
