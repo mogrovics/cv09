@@ -31,37 +31,37 @@
         <!--Buttons-->
 
         <!--Numbers-->
-        <Button x:Name="btn0" Grid.Column="1" Grid.Row="6" Click="Button_Click" Content="0" />
-        <Button x:Name="btn1" Grid.Column="0" Grid.Row="5" Click="Button_Click" Content="1" />
-        <Button x:Name="btn2" Grid.Column="1" Grid.Row="5" Click="Button_Click" Content="2" />
-        <Button x:Name="btn3" Grid.Column="2" Grid.Row="5" Click="Button_Click" Content="3" />
-        <Button x:Name="btn4" Grid.Column="0" Grid.Row="4" Click="Button_Click" Content="4" />
-        <Button x:Name="btn5" Grid.Column="1" Grid.Row="4" Click="Button_Click" Content="5" />
-        <Button x:Name="btn6" Grid.Column="2" Grid.Row="4" Click="Button_Click" Content="6" />
-        <Button x:Name="btn7" Grid.Column="0" Grid.Row="3" Click="Button_Click" Content="7" />
-        <Button x:Name="btn8" Grid.Column="1" Grid.Row="3" Click="Button_Click" Content="8" />
-        <Button x:Name="btn9" Grid.Column="2" Grid.Row="3" Click="Button_Click" Content="9" />
+        <Button x:Name="btn0" Grid.Column="1" Grid.Row="6" Click="Button_Click" Content="0" Margin="2,2,2,2" />
+        <Button x:Name="btn1" Grid.Column="0" Grid.Row="5" Click="Button_Click" Content="1" Margin="2,2,2,2" />
+        <Button x:Name="btn2" Grid.Column="1" Grid.Row="5" Click="Button_Click" Content="2" Margin="2,2,2,2" />
+        <Button x:Name="btn3" Grid.Column="2" Grid.Row="5" Click="Button_Click" Content="3" Margin="2,2,2,2" />
+        <Button x:Name="btn4" Grid.Column="0" Grid.Row="4" Click="Button_Click" Content="4" Margin="2,2,2,2" />
+        <Button x:Name="btn5" Grid.Column="1" Grid.Row="4" Click="Button_Click" Content="5" Margin="2,2,2,2" />
+        <Button x:Name="btn6" Grid.Column="2" Grid.Row="4" Click="Button_Click" Content="6" Margin="2,2,2,2" />
+        <Button x:Name="btn7" Grid.Column="0" Grid.Row="3" Click="Button_Click" Content="7" Margin="2,2,2,2" />
+        <Button x:Name="btn8" Grid.Column="1" Grid.Row="3" Click="Button_Click" Content="8" Margin="2,2,2,2" />
+        <Button x:Name="btn9" Grid.Column="2" Grid.Row="3" Click="Button_Click" Content="9" Margin="2,2,2,2" />
 
 
         <!--Operations-->
-        <Button x:Name="btnAdd" Grid.Column="3"  Grid.Row="6" Click="Button_Click" Content="+" />
-        <Button x:Name="btnSubtract" Grid.Column="3"  Grid.Row="5" Click="Button_Click" Content="-" />
-        <Button x:Name="btnMultiply" Grid.Column="3"  Grid.Row="4" Click="Button_Click" Content="*" />
-        <Button x:Name="btnDivide" Grid.Column="3"  Grid.Row="3" Click="Button_Click" Content="/" />
-        <Button x:Name="btnResult" Grid.Column="4"  Grid.Row="6" Click="Button_Click" Content="=" />
-        <Button x:Name="btnPolarity" Grid.Column="0"  Grid.Row="6" Click="Button_Click" Content="+/-" />
-        <Button x:Name="btnDecimal" Grid.Column="2"  Grid.Row="6" Click="Button_Click" Content="," />
+        <Button x:Name="btnAdd" Grid.Column="3"  Grid.Row="6" Click="Button_Click" Content="+" Margin="2,2,2,2" />
+        <Button x:Name="btnSubtract" Grid.Column="3"  Grid.Row="5" Click="Button_Click" Content="-" Margin="2,2,2,2" />
+        <Button x:Name="btnMultiply" Grid.Column="3"  Grid.Row="4" Click="Button_Click" Content="*" Margin="2,2,2,2" />
+        <Button x:Name="btnDivide" Grid.Column="3"  Grid.Row="3" Click="Button_Click" Content="/" Margin="2,2,2,2" />
+        <Button x:Name="btnResult" Grid.Column="4"  Grid.Row="6" Click="Button_Click" Content="=" Margin="2,2,2,2" />
+        <Button x:Name="btnPolarity" Grid.Column="0"  Grid.Row="6" Click="Button_Click" Content="+/-" Margin="2,2,2,2" />
+        <Button x:Name="btnDecimal" Grid.Column="2"  Grid.Row="6" Click="Button_Click" Content="," Margin="2,2,2,2" />
 
         <!--Memory-->
-        <Button x:Name="btnMC" Grid.Column="0"  Grid.Row="2" Click="Button_Click" Content="MC" />
-        <Button x:Name="btnMR" Grid.Column="1"  Grid.Row="2" Click="Button_Click" Content="MR" />
-        <Button x:Name="btnMS" Grid.Column="2"  Grid.Row="2" Click="Button_Click" Content="MS" />
-        <Button x:Name="btnMPlus" Grid.Column="3"  Grid.Row="2" Click="Button_Click" Content="M+" />
-        <Button x:Name="btnMMinus" Grid.Column="4"  Grid.Row="2" Click="Button_Click" Content="M-" />
+        <Button x:Name="btnMC" Grid.Column="0"  Grid.Row="2" Click="Button_Click" Content="MC" Margin="2,2,2,2" />
+        <Button x:Name="btnMR" Grid.Column="1"  Grid.Row="2" Click="Button_Click" Content="MR" Margin="2,2,2,2" />
+        <Button x:Name="btnMS" Grid.Column="2"  Grid.Row="2" Click="Button_Click" Content="MS" Margin="2,2,2,2" />
+        <Button x:Name="btnMPlus" Grid.Column="3"  Grid.Row="2" Click="Button_Click" Content="M+" Margin="2,2,2,2" />
+        <Button x:Name="btnMMinus" Grid.Column="4"  Grid.Row="2" Click="Button_Click" Content="M-" Margin="2,2,2,2" />
 
         <!--Clear-->
-        <Button x:Name="btnC" Grid.Column="4"  Grid.Row="3" Click="Button_Click" Content="C" />
-        <Button x:Name="btnCE" Grid.Column="4"  Grid.Row="4" Click="Button_Click" Content="CE" />
-        <Button x:Name="btnErase" Grid.Column="4"  Grid.Row="5" Click="Button_Click" Content="&lt;=" />
+        <Button x:Name="btnC" Grid.Column="4"  Grid.Row="3" Click="Button_Click" Content="C" Margin="2,2,2,2" />
+        <Button x:Name="btnCE" Grid.Column="4"  Grid.Row="4" Click="Button_Click" Content="CE" Margin="2,2,2,2" />
+        <Button x:Name="btnErase" Grid.Column="4"  Grid.Row="5" Click="Button_Click" Content="&lt;=" Margin="2,2,2,2" />
     </Grid>
 </Window>
